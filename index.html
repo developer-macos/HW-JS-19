@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Зміна кольору фону</title>
+</head>
+
+<body>
+
+    <form>
+        <p>Choose a color:</p>
+        <label>
+            <input type="radio" name="color" value="red" checked />
+            Red
+        </label>
+        <label>
+            <input type="radio" name="color" value="white" />
+            White
+        </label>
+        <label>
+            <input type="radio" name="color" value="green" />
+            Green
+        </label>
+    </form>
+
+    <script>
+        const radios = document.querySelectorAll('input[name="color"]');
+
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = this.value;
+        }
+
+        radios.forEach(radio => {
+            radio.addEventListener('change', changeBackgroundColor);
+        });
+
+        // Встановити початковий колір при завантаженні сторінки
+        document.body.style.backgroundColor = document.querySelector('input[name="color"]:checked').value;
+    </script>
+
+</body>
+
+</html>
