@@ -1,44 +1,36 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Зміна кольору фону</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-
+<body class="body">
     <form>
         <p>Choose a color:</p>
         <label>
-            <input type="radio" name="color" value="red" checked />
+            <input type="radio" name="color" value="red" class="red-button" />
             Red
         </label>
         <label>
-            <input type="radio" name="color" value="white" />
+            <input type="radio" name="color" value="white" class="white-button" />
             White
         </label>
         <label>
-            <input type="radio" name="color" value="green" />
+            <input type="radio" name="color" value="green" class="green-button" />
             Green
         </label>
     </form>
 
-    <script>
-        const radios = document.querySelectorAll('input[name="color"]');
 
-        function changeBackgroundColor() {
-            document.body.style.backgroundColor = this.value;
-        }
-
-        radios.forEach(radio => {
-            radio.addEventListener('change', changeBackgroundColor);
-        });
-
-        // Встановити початковий колір при завантаженні сторінки
-        document.body.style.backgroundColor = document.querySelector('input[name="color"]:checked').value;
-    </script>
-
+    <!-- 2 -->
+    <input type="text" placeholder="Ваше ім'я?" id="name-input" />
+    <button class="btn">go</button>
+    <h1>Привіт, <span id="name-output">незнайомець</span>!</h1>
 </body>
+<script src="index.js"></script>
 
 </html>
